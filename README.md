@@ -1,27 +1,51 @@
-# UserManagementSystem
+**User Management System**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+-This is an Angular application for managing user data. 
+-The application allows users to add, edit, and delete user information. 
+-It consists of two components: `UserUpsertComponent` for adding and updating user information and `UserListComponent` for displaying a list of users.
 
-## Development server
+*Usage*
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Adding a User:
 
-## Code scaffolding
+-Click on the "Add New User" button in the user list view.
+-Fill in the required details in the form.
+-Click the "Submit" button to add the user.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Editing a User:
 
-## Build
+-Click on the "edit" icon next to the user in the user list view.
+-Modify the user details in the form.
+-Click the "Submit" button to update the user.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Deleting a User:
 
-## Running unit tests
+-Click on the "delete" icon next to the user in the user list view.
+Project Structure
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## UserUpsertComponent:
 
-## Running end-to-end tests
+-Handles user creation and updating.
+-Uses Angular Reactive Forms for form handling.
+-Validates user input.
+-Utilizes the UserServiceService for user data management.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## UserListComponent:
 
-## Further help
+-Displays a list of users.
+-Allows editing and deleting users.
+-Navigates to UserUpsertComponent for user editing.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## UserServiceService:
+-Manages user data, including adding, updating, and deleting users.
+
+## Dependencies:
+-Angular Material: Provides UI components and styles.
+-SweetAlert2: Used for displaying informative pop-up messages.
+-FlexLayout: Used for Layout Alignments.
+
+## Additional Notes
+-The application uses Angular Reactive Forms for form handling and validation.
+-SweetAlert2 is integrated for user-friendly alert messages.
+
+The application uses a simple in-memory data store managed by the UserServiceService for storing user information.
