@@ -10,13 +10,19 @@ import { UserServiceService } from '../user-service.service';
   styleUrls: ['./user-upsert.component.css']
 })
 export class UserUpsertComponent implements OnInit {
-  
-  constructor(public route: Router, public userService: UserServiceService) {}
 
+  constructor(public route: Router, public userService: UserServiceService) { }
+  isInputDisabled: boolean = false;
+  users: any[] = [];
+  selectedUser: any
   ngOnInit() {
-    const selectedUser = this.userService.getSelectedUser();
-    if (selectedUser) {
-      this.loginForm.patchValue(selectedUser);
+    this.users = this.userService.getUsers();
+     this.selectedUser = this.userService.getSelectedUser();
+
+    if (this.selectedUser) {
+      this.loginForm.patchValue(this.selectedUser);
+      this.isInputDisabled=true
+
     }
   }
 
@@ -31,38 +37,46 @@ export class UserUpsertComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       const userData = this.loginForm.value;
-
-      // Check if email or phone already exists using the userService
-      const emailExists = this.userService.doesEmailExist(userData.email);
-      const phoneExists = this.userService.doesPhoneExist(userData.phone);
-
-      if (emailExists || phoneExists) {
-        Swal.fire({
-          title: 'Oops...',
-          backdrop:"rgb(82 82 82)",
-          text: 'Email or Phone Already Exists!',
-          icon: 'info'
-        });
-      } else {
-        // Add user to the userService
-        this.userService.addUser(userData);
-        // Clear selected user
+      if (this.selectedUser) {    
+        let index = this.users.findIndex((u) => u.phone == userData.phone)
+        this.users[index] = userData;
         this.userService.setSelectedUser(null);
-        // Navigate to the user list
-        this.route.navigate(['/user_list']);
+        this.isInputDisabled=false
+        this.route.navigate(['/user_list'])
+      }
+      else {
+        // Check if email or phone already exists using the userService
+        // const emailExists = this.userService.doesEmailExist(userData.email);
+        const phoneExists = this.userService.doesPhoneExist(userData.phone);
 
-        Swal.fire({
-          title: 'User Added',
-          backdrop:"rgb(82 82 82)",
-          text: 'User Added Successfully!',
-          icon: 'success'
-        });
+        if (phoneExists) {
+          Swal.fire({
+            title: 'Oops...',
+            backdrop: "rgb(82 82 82)",
+            text: 'Phone Already Exists!',
+            icon: 'info'
+          });
+        } else {
+          // Add user to the userService
+          this.userService.addUser(userData);
+          // Clear selected user
+          this.userService.setSelectedUser(null);
+          // Navigate to the user list
+          this.route.navigate(['/user_list']);
+
+          Swal.fire({
+            title: 'User Added',
+            backdrop: "rgb(82 82 82)",
+            text: 'User Added Successfully!',
+            icon: 'success'
+          });
+        }
       }
     } else {
       this.loginForm.markAllAsTouched();
       Swal.fire({
-        title: 'Oops!...',      
-        backdrop:"rgb(82 82 82)",
+        title: 'Oops!...',
+        backdrop: "rgb(82 82 82)",
         text: 'Please Enter Valid Details',
         icon: 'error'
       });

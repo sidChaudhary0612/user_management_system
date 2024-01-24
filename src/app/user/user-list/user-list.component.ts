@@ -16,6 +16,9 @@ export class UserListComponent implements OnInit{
   ngOnInit() {
     this.users = this.userService.getUsers();
   }
+  goToAddUser(){
+    this.route.navigate(['/'])
+  }
   editUser(user: any) {
     this.userService.setSelectedUser(user);
     this.route.navigate(['/'])

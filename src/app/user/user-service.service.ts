@@ -22,9 +22,9 @@ selectedUser:any
   getSelectedUser() {
     return this.selectedUser;
   }
-  doesEmailExist(email: any): boolean {
-    return this.users.some(user => user.email === email);
-  }
+  // doesEmailExist(email: any): boolean {
+  //   return this.users.some(user => user.email === email);
+  // }
   doesPhoneExist(phone: any): boolean {
     return this.users.some(user => user.phone === phone);
   }
