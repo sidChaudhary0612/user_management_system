@@ -1,5 +1,6 @@
 **User Management System**
 
+-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
 -This is an Angular application for managing user data. 
 -The application allows users to add, edit, and delete user information. 
 -It consists of two components: `UserUpsertComponent` for adding and updating user information and `UserListComponent` for displaying a list of users.
