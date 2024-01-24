@@ -1,0 +1,54 @@
+
+<div class="upsertContainer" fxLayout="column" fxLayoutAlign="start center">
+    <h2>User Management System</h2>
+    <mat-card fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1.25rem">
+        <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1.25rem" [formGroup]="loginForm">
+            <div class="inputField" fxLayout="column" fxLayoutAlign="center center">
+                <input type="text" formControlName="first_name" placeholder="First Name">
+                <mat-error *ngIf="loginForm.get('first_name')?.touched && loginForm.get('first_name')?.hasError('required')">* First Name is required</mat-error>
+            </div>
+            <div class="inputField" fxLayout="column" fxLayoutAlign="center center">
+                <input type="text" formControlName="last_name" placeholder="Last Name">
+                <mat-error *ngIf="loginForm.get('last_name')?.touched && loginForm.get('last_name')?.hasError('required')">* Last Name is required</mat-error>
+            </div>
+            <div class="inputField" fxLayout="column" fxLayoutAlign="center center">
+                <input type="text" formControlName="address" placeholder="Address">
+                <mat-error *ngIf="loginForm.get('address')?.touched && loginForm.get('address')?.hasError('required')">* Address is required</mat-error>
+            </div>
+            <div class="inputField" fxLayout="column" fxLayoutAlign="center center">
+                <input type="text" formControlName="email" placeholder="Email">
+                <mat-error *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')">* Email is required</mat-error>
+                <mat-error *ngIf="loginForm.touched && loginForm.get('email')?.hasError('email')">* Enter valid email</mat-error>
+            </div>
+            <div class="inputField" fxLayout="column" fxLayoutAlign="center center">
+                <input type="text" formControlName="phone" placeholder="Phone">
+                <mat-error *ngIf="loginForm.get('phone')?.touched && loginForm.get('phone')?.hasError('required')">* Phone No. is required</mat-error>
+                <mat-error *ngIf="loginForm.touched && loginForm.get('phone')?.hasError('pattern')">* Enter valid number</mat-error>
+            </div>    
+         </form>
+         <button mat-raised-button (click)="onSubmit()">Submit</button>
+    </mat-card>
+    <!-- <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; index as i">
+            <td style="text-transform: capitalize;">{{ user.first_name }} {{user.last_name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td fxLayout=row fxLayoutAlign="space-evenly" fxLayoutGap="1rem">
+              <mat-icon class="icon1" matTooltip="Edit User" (click)="editUser(user)">edit</mat-icon>
+              <mat-icon class="icon2" matTooltip="Delete User" (click)="deleteUser(i)">delete</mat-icon>
+            </td>
+          </tr>
+        </tbody>
+      </table> -->
+    </div>  
+
+

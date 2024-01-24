@@ -1,0 +1,42 @@
+.userListContainer{
+    min-height: 100%;
+    padding: 2rem;
+    background: url(./../../../assets/bg.jpg)no-repeat fixed ;
+    background-size: cover;
+    
+}
+table{
+    .icon1{
+        color: #197e00;
+    }
+    .icon2{
+        color: red;
+    }
+    th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #3284c6;
+        color: white;
+        text-align: center;
+      }
+       
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+      
+      
+       td, th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        color: white;
+        text-align: center;
+
+      }
+      
+       tr:nth-child(even){background-color: #509cff;}
+       tr:nth-child(odd){background-color: #81b6fc;}
+      
+       tr:hover {background-color: #b8d7ff86;}
+      
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'user_management_system';
+  users: any[] = [];
+
+  onFormSubmitted(formData: FormGroup): void {
+    if (formData.valid) {
+      this.users.push(formData.value);
+    }
+  }
 }
