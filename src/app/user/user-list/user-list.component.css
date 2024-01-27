@@ -1,7 +1,7 @@
 .userListContainer{
     min-height: 100%;
     padding: 2rem;
-    background: url(./../../../assets/bg.jpg)no-repeat fixed ;
+    background: url(./../../../assets/Wooden.jpg)no-repeat fixed ;
     background-size: cover;
     
 }
@@ -16,7 +16,7 @@ table{
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: left;
-        background-color: #3284c6;
+        background-color: #c08a67;
         color: white;
         text-align: center;
       }
@@ -34,8 +34,8 @@ table{
 
       }
       
-       tr:nth-child(even){background-color: #509cff;}
-       tr:nth-child(odd){background-color: #81b6fc;}
+       /* tr:nth-child(even){background-color: #509cff;}
+       tr:nth-child(odd){background-color: #81b6fc;} */
       
        tr:hover {background-color: #b8d7ff86;}
       

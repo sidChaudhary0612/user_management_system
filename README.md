@@ -5,8 +5,10 @@
 -The application allows users to add, edit, and delete user information. 
 -It consists of two components: `UserUpsertComponent` for adding and updating user information and `UserListComponent` for displaying a list of users.
 
-*Usage*
+## Development server
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+*Usage*
 ## Adding a User:
 
 -Click on the "Add New User" button in the user list view.
