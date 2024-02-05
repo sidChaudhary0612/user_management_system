@@ -59,3 +59,15 @@ button:hover {
     box-shadow: 5px 5px 20px 0px #000;
     scale: 1.01;
 }
+@media screen and (min-width : 360px) and (max-width : 599px) {
+    .userListContainer[_ngcontent-ng-c2127038115] {
+        padding:2rem 1rem;
+       
+    }
+    table{
+        width: 100%;
+    }
+    button{
+        width: 60%;
+    }
+  }

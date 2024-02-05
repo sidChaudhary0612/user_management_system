@@ -39,6 +39,7 @@ form {
 
     h2 {
         color: #fff;
+        text-align: center;
         font-size: 2rem;
         text-decoration: underline;
         font-family: 'Poppins-Bold' !important;
@@ -48,7 +49,7 @@ form {
 
 
     .mat-mdc-card {
-        padding: 2rem;
+        padding:3rem 2rem;
         border-radius: 1rem;
         backdrop-filter: blur(5px);
         background: none;
@@ -143,4 +144,49 @@ form {
     background-color: #ddd; 
     
     pointer-events: none; 
+  }
+  @media screen and (min-width : 360px) and (max-width : 599px) {
+    .mat-mdc-card{
+        width: 90%!important;
+
+        
+    }
+}
+@media screen and (min-width :1500px) {
+    .mat-mdc-card{
+        width: 60%!important;
+        padding:4rem 2rem !important;
+
+        
+    }
+    input {
+        
+        border: 3px solid #000!important;
+        
+    }
+    input:hover {
+        
+        border: 3px solid #fff!important;
+        
+    }
+    button{
+        padding:1.5rem
+    }
+    h2{
+        font-size: 2.5rem!important;
+    }
+}
+    @media screen and (min-width : 600px) and (max-width : 759px) {
+        .mat-mdc-card{
+            width: 75%!important;
+    
+            
+        }
+    }
+        @media screen and (min-width : 760px) and (max-width : 959px) {
+            .mat-mdc-card{
+                width: 75%!important;
+        
+                
+            }
   }
